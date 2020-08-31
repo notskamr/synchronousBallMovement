@@ -1,5 +1,6 @@
 var hypnoticBall, database;
 var position;
+var playerCount = 0, gameState = 0
 
 
 function setup(){
@@ -18,6 +19,7 @@ function setup(){
 function draw(){
   background("white");
   
+
     if(keyDown(LEFT_ARROW)){
       writePosition(-1,0);
     }

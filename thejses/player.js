@@ -1,4 +1,4 @@
-class Player {
+class playerClass{
     constructor(){
         this.index = null
         this.distance = 0
@@ -28,7 +28,7 @@ class Player {
     }
     static getPlayerInfo() {
      var playerInfoReference = database.ref('players')
-     playerInfoReference.on('value', (data) >= {
+     playerInfoReference.on('value', (data) => {
         allPlayers = data.val()
 
 

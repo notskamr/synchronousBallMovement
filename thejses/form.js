@@ -14,29 +14,31 @@ class Form {
 
 
     }
-display() {
-    var title = createElement('h2')
-    title.html('carRacingGame')
-    title.position(130,0)
-  
-   
-    this.input.position(130,160)
-    this.button.position(250,200)
 
-    this.button.mousePressed(function(){
-        this.input.hide()
-        this.button.hide()
-        player.name = this.input.value()
-        playerCount++
-        player.index = playerCount
-        player.update()
-        player.updateCount(playerCount)
+    display() {
+        var title = createElement('h2')
+        title.html('carRacingGame')
+        title.position(130,0)
+      
        
-        this.greeting.html('HALLO '+ player.name + '!')
-        this.greeting.position(130,160)
-
-
-    })
-}
-
+        this.input.position(130,160)
+        this.button.position(250,200)
+    
+        this.button.mousePressed(()=> {
+            this.input.hide()
+            this.button.hide()
+            player.name = this.input.value()
+            playerCount++
+            player.index = playerCount
+            player.update()
+            player.updateCount(playerCount)
+           
+            this.greeting.html('HALLO '+ player.name + '!')
+            this.greeting.position(130,160)
+    
+            console.log('HI')
+    
+    
+        })
+    }
 }

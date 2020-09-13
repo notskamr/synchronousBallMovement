@@ -1,3 +1,5 @@
+
+
 class game {
     constructor(){}
     
@@ -17,14 +19,30 @@ class game {
   
     start(){
       if(gameState === 0){
-        player = new Player();
+        player = new playerClass()
         player.getCount();
         form = new Form()
         form.display();
       }
     }
     
+async startFunction() {
+  if(gameState == 0) {
+    player = new playerClass()
+    playerCountReference = await database.ref('playerCount').once('value')
 
+    if(playerCountReference.exists() ){
+
+      playerCount = playerCountReference.val()
+      player.getCount()
+
+      
+    }
+    form = new Form()
+    form.display()
+  }
+
+}
     play(){
       form.hide()
       textSize(30)
